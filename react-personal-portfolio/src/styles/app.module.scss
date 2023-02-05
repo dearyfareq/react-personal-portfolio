@@ -1,3 +1,5 @@
+@import "../styles/contants.scss";
 .container{
-font-weight: 100;
+    overflow-x: clip;
+    color: $primary;
 }
