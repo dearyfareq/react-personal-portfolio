@@ -5,7 +5,7 @@ export const headerVariants = {
     transition: {
       type: "spring",
       stiffness: 300,
-      damping: 140,
+      damping: 0,
     },
   },
   show: {
@@ -14,7 +14,7 @@ export const headerVariants = {
     transition: {
       type: "spring",
       stiffness: 80,
-      delay: 1,
+      delay: 1
     },
   },
 };

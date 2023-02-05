@@ -1,11 +1,18 @@
 import React from "react";
 import css from './Header.module.scss'
 import {BiPhoneCall} from 'react-icons/bi'
+import {motion} from "framer-motion"
+import {headerVariants} from "../utils/motion"
 
 const Header = () => {
     return(
-        //main wrapper
-        <div className={`paddings ${css.wrapper}`}>
+        //main wrapper - the motion JS library allows us to animate when in initial state and when it becomes in view, check motion.js file for animation details
+        <motion.div
+        initial="hidden"
+        whileInView="show"
+        variants={headerVariants}
+        viewport={{once: false, amount: 0.25}}
+        className={`paddings ${css.wrapper}`}>
             {/* items container with flex and auto margin */}
             <div className={`innerWidth ${css.container}`}>
               <div className={css.name}>
@@ -24,7 +31,7 @@ const Header = () => {
                 </li>
               </ul>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
