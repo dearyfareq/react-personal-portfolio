@@ -6,6 +6,7 @@ import {sideMenu, headerVariants} from "../utils/motion"
 
 const Header = () => {
 
+    //use state for the menu/list icon
     const [listOpen, listdrop] = useState(false);
 
     return(
