@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+//function used to see if y scroll is greater than 0, then add shadow using scroll event listener
+
 const useHeaderShadow = () => {
 const [headerShadow, setHeaderShadow] = useState(false)
   //to handle shadow of header
