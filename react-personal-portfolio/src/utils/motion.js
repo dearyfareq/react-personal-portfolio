@@ -193,7 +193,7 @@ export const listItem = {
 /* this section uses the state of true or false when clicking on the icon on small screens, it then moves the dropdown menu outside of view! */
 export const sideMenu = (listOpen) => {
   if (document.documentElement.clientWidth <= 770) {
-    console.log("outside of sidebar reached")
+    // console.log("outside of sidebar reached")
     return { right: !listOpen && "-100%" };
   }
 };
