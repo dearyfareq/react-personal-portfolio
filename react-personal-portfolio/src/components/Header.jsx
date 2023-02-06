@@ -3,11 +3,13 @@ import css from './Header.module.scss'
 import {BiPhoneCall, BiMenuAltRight} from 'react-icons/bi'
 import {motion} from "framer-motion"
 import {sideMenu, headerVariants} from "../utils/motion"
+import useHeaderShadow from "../hooks/useHeaderShadow";
 
 const Header = () => {
 
     //use state for the menu/list icon
     const [listOpen, listdrop] = useState(false);
+    const headerShadow = useHeaderShadow();
 
     return(
         //main wrapper - the motion JS library allows us to animate when in initial state and when it becomes in view, check motion.js file for animation details
@@ -16,7 +18,9 @@ const Header = () => {
         whileInView="show"
         variants={headerVariants}
         viewport={{once: false, amount: 0.25}}
-        className={`paddings ${css.wrapper}`}>
+        className={`paddings ${css.wrapper}`}
+        style={{boxShadow: headerShadow}}
+        >
             {/* items container with flex and auto margin */}
             <div className={`innerWidth ${css.container}`}>
               <div className={css.name}>
