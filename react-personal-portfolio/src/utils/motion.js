@@ -190,9 +190,10 @@ export const listItem = {
   show: { opacity: 1 },
 };
 
-export const getMenuStyles = (menuOpened) => {
-  if (document.documentElement.clientWidth <= 640) {
+/* this section uses the state of true or false when clicking on the icon on small screens, it then moves the dropdown menu outside of view! */
+export const sideMenu = (listOpen) => {
+  if (document.documentElement.clientWidth <= 770) {
     console.log("outside of sidebar reached")
-    return { right: !menuOpened && "-100%" };
+    return { right: !listOpen && "-100%" };
   }
 };

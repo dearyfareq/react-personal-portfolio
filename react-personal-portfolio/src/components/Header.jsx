@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import css from './Header.module.scss'
-import {BiPhoneCall} from 'react-icons/bi'
+import {BiPhoneCall, BiMenuAltRight} from 'react-icons/bi'
 import {motion} from "framer-motion"
-import {headerVariants} from "../utils/motion"
+import {sideMenu, headerVariants} from "../utils/motion"
 
 const Header = () => {
+
+    const [listOpen, listdrop] = useState(false);
+
     return(
         //main wrapper - the motion JS library allows us to animate when in initial state and when it becomes in view, check motion.js file for animation details
         <motion.div
@@ -20,7 +23,10 @@ const Header = () => {
               </div>
               {/* list items with phone number and icon from react */}
               
-              <ul className={` flexCenter ${css.list}`}>
+              <ul 
+              className={` flexCenter ${css.list}`}
+              style={sideMenu(listOpen)}
+              >
                 <li><a href="">services</a></li>
                 <li><a href="">experince</a></li>
                 <li><a href="">portfolio</a></li>
@@ -30,6 +36,14 @@ const Header = () => {
                     <BiPhoneCall size ={"40px"} />
                 </li>
               </ul>
+
+              {/* the div below is the icon which when clicked, plays a function to move the list items on screens with small client.widths*/}
+              <div 
+              className={css.listdrop}
+              onClick={()=> listdrop((prev) => !prev)}
+              >
+                <BiMenuAltRight size={"30px"} />
+              </div>
             </div>
         </motion.div>
     )
