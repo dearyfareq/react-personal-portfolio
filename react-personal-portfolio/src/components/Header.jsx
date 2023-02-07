@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import css from './Header.module.scss'
 import {BiPhoneCall, BiMenuAltRight} from 'react-icons/bi'
 import {motion} from "framer-motion"
-import {sideMenu, headerVariants} from "../utils/motion"
+import {sideMenu, staggerContainer, fadeIn} from "../utils/motion"
 import useHeaderShadow from "../hooks/useHeaderShadow";
 
 const Header = () => {
@@ -16,13 +16,17 @@ const Header = () => {
         <motion.div
         initial="hidden"
         whileInView="show"
-        variants={headerVariants}
+        variants={staggerContainer}
         viewport={{once: false, amount: 0.25}}
         className={`paddings ${css.wrapper}`}
         style={{boxShadow: headerShadow}}
+        
         >
             {/* items container with flex and auto margin */}
-            <div className={`innerWidth ${css.container}`}>
+            <motion.div 
+            className={`innerWidth ${css.container}`}
+            variants={fadeIn("down", "tween", 0.2, 1)}
+            >
               <div className={css.name}>
                   DIYARI
               </div>
@@ -49,7 +53,7 @@ const Header = () => {
               >
                 <BiMenuAltRight size={"30px"} />
               </div>
-            </div>
+            </motion.div>
         </motion.div>
     )
 }

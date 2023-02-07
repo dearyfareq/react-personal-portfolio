@@ -1,3 +1,4 @@
+//replaced this animation for the fadeIn in the NavBar
 export const headerVariants = {
   hidden: {
     opacity: 0,
@@ -14,10 +15,11 @@ export const headerVariants = {
     transition: {
       type: "spring",
       stiffness: 80,
-      delay: 1
+      delay: 0.2
     },
   },
 };
+//replaced this animation for the fadeIn in the NavBar
 
 export const slideIn = (direction, type, delay, duration) => ({
   hidden: {
