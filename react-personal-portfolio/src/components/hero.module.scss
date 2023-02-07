@@ -1,0 +1,67 @@
+@import "../styles/contants.scss";
+
+// using the nth child attribute, we customly changed a couple of aspects
+.wrapper{
+    overflow: hidden;
+    
+
+    .container{
+        z-index: 1;
+        position: relative;
+        
+
+        .upper{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            >:nth-child(2){
+                line-height: 35px;
+            }
+
+        }
+
+        .lower{
+            margin-top: 13rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .skills{
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                >:nth-child(2){
+                    line-height: 25px;
+                }
+            }
+
+            .freelance{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.1rem;
+                margin-top: -40px;
+                >:nth-child(3){
+                    margin-top: -20px;
+                }
+
+
+                img{
+                    width: 3.5rem;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+        .person{
+            position: absolute;
+            bottom: -2rem;
+            margin: auto;
+            background-image: url("../../public/splash.png");
+            background-size: 23rem;
+            background-repeat: no-repeat;
+            left: 34%;
+        }
+    }
+}
