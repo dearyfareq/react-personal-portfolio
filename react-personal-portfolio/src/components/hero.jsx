@@ -4,6 +4,7 @@ import person from "../../public/person.png";
 import logo from "../../public/certificate.png";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "../utils/motion";
+
 //don't forget to import images before using them, if so; use {import name}
 const Hero = () => {
   return (
@@ -38,7 +39,7 @@ const Hero = () => {
           <img src={person} alt="person" />
         </div>
 
-        {/* lower hero elements */}
+        {/* lower hero elements ( longer than the others)*/}
         <div className={css.lower}>
           <div className={css.skills}>
             <motion.div
@@ -56,10 +57,10 @@ const Hero = () => {
             </div>
           </div>
           <div className={css.freelance}>
-            <motion.img 
-            src={logo} 
-            alt="Icon" 
-            variants={fadeIn("left","tween",0.2,1)}
+            <motion.img
+              src={logo}
+              alt="Icon"
+              variants={fadeIn("left", "tween", 0.2, 1)}
             />
             <motion.span
               className="secondaryText"
