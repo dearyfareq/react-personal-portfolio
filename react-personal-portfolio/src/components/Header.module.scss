@@ -85,5 +85,15 @@
                 }
             }
         }
+
+        .listdrop {
+
+            @media (max-width: $sm),
+            (max-width: $md) {
+                display: block;
+            }
+
+            display: none;
+        }
     }
 }
