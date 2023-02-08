@@ -1,11 +1,20 @@
 import React from "react";
 import css from "../../src/components/experince.module.scss";
+import { motion } from "framer-motion"
+import { fadeIn, staggerContainer } from "../utils/motion";
 //imported the data for the mapping, check data file to adjust as per requirements 
 import { projectExperience, WhatDoIHelp } from "../utils/data";
 
 const Experince = () => {
   return (
-    <div className={css.wrapper}>
+    <motion.section 
+     className={css.wrapper}
+     initial="hidden"
+     whileInView="show"
+     variants={staggerContainer}
+     viewport={{once: false, amount: 0.25}}
+
+     >
       <div
         className={`paddings yPaddings flexCenter innerWidth ${css.container}`}
       >
@@ -17,7 +26,12 @@ const Experince = () => {
           */}
           {projectExperience.map((exp, i) => {
             return (
-              <div className={css.exp} key={i}>
+              // the motion uses tween from the right as well!
+              <motion.div 
+              className={css.exp} 
+              key={i}
+              variants={fadeIn("right","tween",(i+1)*0.3,0.2)}
+              >
                 <div className="flexCenter" style={{background: exp.bg}}>
                   <exp.icon size={25} color="white" />
                 </div>
@@ -26,13 +40,16 @@ const Experince = () => {
                   <span>{exp.name}</span>
                   <span className="secondaryText">{exp.projects} projects</span>
                 </div>
-              </div>
+              </motion.div >
             );
           })}
         </div>
 
         {/* right slide of experince section*/}
-        <div className={`${css.right}`}>
+        <motion.div 
+        className={`${css.right}`}
+        variants={fadeIn("up","tween",0.2,1)}
+        >
          <span className="primaryText">How do I perform?</span><br/> 
 
          {/* mapping out the two paragraphs */}
@@ -54,9 +71,9 @@ const Experince = () => {
               <span className="secondaryText">Clients</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.section>
   );
 };
 
