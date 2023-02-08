@@ -47,6 +47,7 @@ const Experince = () => {
 
         {/* right slide of experince section*/}
         <motion.div 
+        // the motion uses tween from the top as well!
         className={`${css.right}`}
         variants={fadeIn("up","tween",0.2,1)}
         >
