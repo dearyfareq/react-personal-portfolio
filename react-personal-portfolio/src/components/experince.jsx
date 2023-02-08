@@ -1,7 +1,7 @@
 import React from "react";
 import css from "../../src/components/experince.module.scss";
 //imported the data for the mapping, check data file to adjust as per requirements 
-import { projectExperience } from "../utils/data";
+import { projectExperience, WhatDoIHelp } from "../utils/data";
 
 const Experince = () => {
   return (
@@ -32,8 +32,28 @@ const Experince = () => {
         </div>
 
         {/* right slide of experince section*/}
-        <div className={css.right}>
-          right side
+        <div className={`${css.right}`}>
+         <span className="primaryText">How do I perform?</span><br/> 
+
+         {/* mapping out the two paragraphs */}
+          {
+            WhatDoIHelp.map((paragraph, i) =>{
+              return <span className="secondaryText">{paragraph}<br/></span>
+            })
+          }
+          {/* adding extra bold text */}
+          <div className={` flexCenter ${css.extra}`}>
+            <div className={` flexCenter ${css.extr}`}>
+              <span className="primaryText">286+</span>
+              <span className="secondaryText">Projects</span>
+              <span className="secondaryText">Completed</span>
+            </div>
+            <div className={` flexCenter ${css.extr}`}>
+              <span className="primaryText">19+</span>
+              <span className="secondaryText">Happy</span>
+              <span className="secondaryText">Clients</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

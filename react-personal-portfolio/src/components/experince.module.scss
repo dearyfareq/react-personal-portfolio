@@ -55,5 +55,34 @@
                 }
             }
         }
+
+        .right{
+            display: flex;
+            flex-direction: column;
+            gap: 0rem;
+
+            .extra{
+
+                //custom adjustment to the gap
+                gap: 2rem;
+                align-items: center;
+                margin-top: 1.5rem;
+                @media (max-width: 640px) , (max-width: 768px) {}
+                
+                //custom addjustment to the extra text
+                .extr{
+                    @media (max-width: 640px) , (max-width: 768px) {}
+                    flex-direction: column;
+                    >:nth-child(2){
+                        margin-top: -1rem;
+                    }
+                    >:nth-child(3){
+                        margin-top: -1.5rem;
+                    }
+                }
+      
+            }
+        }
+
     }
 }
