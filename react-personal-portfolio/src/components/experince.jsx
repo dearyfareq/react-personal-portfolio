@@ -7,7 +7,7 @@ const Experince = () => {
   return (
     <div className={css.wrapper}>
       <div
-        className={`paddings yPaddings flexCenter innerWidth${css.container}`}
+        className={`paddings yPaddings flexCenter innerWidth ${css.container}`}
       >
         {/* left slide of experince section, will use mapping and a premade data array*/}
         <div className={css.left}>
@@ -18,13 +18,13 @@ const Experince = () => {
           {projectExperience.map((exp, i) => {
             return (
               <div className={css.exp} key={i}>
-                <div className="flexCenter">
+                <div className="flexCenter" style={{background: exp.bg}}>
                   <exp.icon size={25} color="white" />
                 </div>
 
                 <div>
                   <span>{exp.name}</span>
-                  <span>{exp.projects}</span>
+                  <span className="secondaryText">{exp.projects} projects</span>
                 </div>
               </div>
             );
@@ -32,7 +32,9 @@ const Experince = () => {
         </div>
 
         {/* right slide of experince section*/}
-        <div className={css.right}></div>
+        <div className={css.right}>
+          right side
+        </div>
       </div>
     </div>
   );
