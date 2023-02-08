@@ -38,7 +38,7 @@ const Experince = () => {
          {/* mapping out the two paragraphs */}
           {
             WhatDoIHelp.map((paragraph, i) =>{
-              return <span className="secondaryText">{paragraph}<br/></span>
+              return <span className="secondaryText" key={i}>{paragraph}<br/></span>
             })
           }
           {/* adding extra bold text */}
