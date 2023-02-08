@@ -11,13 +11,18 @@
         //it is a flex, so devide the area equally be setting flex to 1
         >div{
             flex: 1;
-            border: 1px solid red;
+            //border: 1px solid red;
         }
 
         .left{
             display: flex;
             flex-direction: column;
             gap: 2rem;
+
+            //Media Query for Ipads
+            @media (max-width: 768px) {
+                gap: 3.5rem;
+            }
 
             .exp{
                 display: flex;
@@ -27,6 +32,11 @@
                 padding: 1.5rem;
                 gap: 2rem;
                 transition: all 300ms ease-out;
+
+                //Media Query for Ipads
+                @media (max-width: 768px) {
+                    height: 14rem;
+                }
 
                 &:hover{
                     cursor: pointer;
@@ -53,6 +63,7 @@
                         font-weight: bold;
                     }
                 }
+
             }
         }
 
@@ -67,17 +78,31 @@
                 gap: 2rem;
                 align-items: center;
                 margin-top: 1.5rem;
-                @media (max-width: 640px) , (max-width: 768px) {}
+
+                //Media Query for smaller screens
+                @media (max-width: 640px) {
+                    margin-top: 0;
+                }
+ 
                 
                 //custom addjustment to the extra text
                 .extr{
-                    @media (max-width: 640px) , (max-width: 768px) {}
                     flex-direction: column;
                     >:nth-child(2){
                         margin-top: -1rem;
                     }
                     >:nth-child(3){
                         margin-top: -1.5rem;
+                    }
+
+                    //Media Query for smaller screens
+                    @media (max-width: 640px) {
+                        >:nth-child(2){
+                            margin-top: 0;
+                        }
+                        >:nth-child(3){
+                            margin-top: 0;
+                        }
                     }
                 }
       
