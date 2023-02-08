@@ -1,6 +1,8 @@
 import { HiOutlineDesktopComputer } from "react-icons/hi";
 import { CiMobile1 } from "react-icons/ci";
 import { MdWorkspacesOutline } from "react-icons/md";
+
+// Project Experience is used in the Experience section as a mapped out array
 export const projectExperience = [
   {
     name: "Website Design",
