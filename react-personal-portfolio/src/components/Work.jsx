@@ -2,7 +2,7 @@ import React from "react";
 import css from "./Work.module.scss";
 import { workExp } from "../utils/data";
 import { motion } from "framer-motion";
-import { staggerChildren } from "../utils/motion";
+import { staggerChildren, textVariant2 } from "../utils/motion";
 
 const Work = () => {
   return (
@@ -21,7 +21,11 @@ const Work = () => {
         <div className={` flexCenter ${css.experience}`}>
           {workExp.map((exp, i) => {
             return (
-              <div className={` flexCenter ${css.exp}`} key={i}>
+              <motion.div
+                className={` flexCenter ${css.exp}`}
+                key={i}
+                variants={textVariant2}
+              >
                 <div className={css.post}>
                   <h1>{exp.place}</h1>
                   <p>{exp.tenure}</p>
@@ -30,9 +34,15 @@ const Work = () => {
                   <h1>{exp.role}</h1>
                   <p>{exp.detail}</p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
+          <div className={css.bar}>
+            <div className={css.line}></div>
+            <div><div className={css.circle} style={{ background: "#286F6F" }}></div></div>
+            <div><div className={css.circle} style={{ background: "#F2704E" }}></div></div>
+            <div><div className={css.circle} style={{ background: "#EEC048" }}></div></div>
+          </div>
         </div>
       </div>
     </motion.section>
