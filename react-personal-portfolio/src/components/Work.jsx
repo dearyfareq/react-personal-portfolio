@@ -17,7 +17,7 @@ const Work = () => {
       <div className={` flexCenter innerWidth ${css.container}`}>
         <span className="primaryText yPaddings">My work Experince</span>
 
-        {/* mapping out the data for the workexp using the same data.js file from before*/}
+        {/* mapping out the data for the workexp using the same data.js file from before */}
         <div className={` flexCenter ${css.experience}`}>
           {workExp.map((exp, i) => {
             return (
@@ -37,10 +37,12 @@ const Work = () => {
               </motion.div>
             );
           })}
+          {/* adding zoom animation to the circless */}
           <motion.div 
           className={css.bar}
           variants={zoomIn(1,1)}
           >
+            {/* adding separate tween animation to the line */}
             <motion.div variants={fadeIn("down", "tween", 2, 1.5)} className={css.line}></motion.div>
             <div><div className={css.circle} style={{ background: "#286F6F" }}></div></div>
             <div><div className={css.circle} style={{ background: "#F2704E" }}></div></div>
