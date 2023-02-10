@@ -2,7 +2,7 @@ import React from "react";
 import css from "./Work.module.scss";
 import { workExp } from "../utils/data";
 import { motion } from "framer-motion";
-import { staggerChildren, textVariant2 } from "../utils/motion";
+import { fadeIn, staggerChildren, textVariant2, zoomIn } from "../utils/motion";
 
 const Work = () => {
   return (
@@ -37,12 +37,15 @@ const Work = () => {
               </motion.div>
             );
           })}
-          <div className={css.bar}>
-            <div className={css.line}></div>
+          <motion.div 
+          className={css.bar}
+          variants={zoomIn(1,1)}
+          >
+            <motion.div variants={fadeIn("down", "tween", 2, 1.5)} className={css.line}></motion.div>
             <div><div className={css.circle} style={{ background: "#286F6F" }}></div></div>
             <div><div className={css.circle} style={{ background: "#F2704E" }}></div></div>
             <div><div className={css.circle} style={{ background: "#EEC048" }}></div></div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.section>
