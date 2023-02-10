@@ -1,0 +1,37 @@
+@import "../styles/contants.scss";
+
+.wrapper{
+
+    .container{
+        flex-direction: column;
+        gap: 2rem;
+
+        .experience{
+            width: 100%;
+            flex-direction: column;
+            gap: 1.4rem;
+            position: relative;
+            
+            
+            .exp{
+                width: 100%;
+                justify-content: space-between;
+                line-height: 35px;
+                align-items: flex-start;
+                flex-wrap: nowrap;
+                //border: 1px solid red;
+
+                //this flex: 1; gives equal width to the two flex children and allows perfext lining.
+                >div{
+                    flex: 1;
+                }
+
+                .role{
+                    margin-left: 2rem;
+                }
+
+            }
+        }
+
+    }
+}
