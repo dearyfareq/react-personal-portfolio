@@ -35,9 +35,12 @@ const Hero = () => {
         </div>
 
         {/* center image of the person*/}
-        <div className={css.person}>
+        <motion.div 
+        className={css.person}
+        variants={fadeIn("up", "tween", 0.2, 1)}
+        >
           <img src={person} alt="person" />
-        </div>
+        </motion.div>
 
         {/* lower hero elements ( longer than the others)*/}
         <div className={css.lower}>
