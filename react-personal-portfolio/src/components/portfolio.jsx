@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { fadeIn, staggerContainer } from "../utils/motion";
+import { fadeIn, staggerChildren } from "../utils/motion";
 import css from "./portfolio.module.scss";
 
 //importing img using file path and name
@@ -12,7 +12,7 @@ export const Portfolio = () => {
     <motion.section
       initial="hidden"
       whileInView="show"
-      variants={staggerContainer}
+      variants={staggerChildren}
       viewport={{ once: false, amount: 0.25 }}
       className={` paddings ${css.wrapper}`}
     >
@@ -29,11 +29,11 @@ export const Portfolio = () => {
         </div>
 
         {/* img sliders / gallary*/}
-        <div className={css.gallary}>
+        <motion.div variants={fadeIn("up", "tween", 0.2, 0.5)} className={css.gallary}>
           <motion.img variants={fadeIn("up", "tween", 0.2, 0.5)} src={img1} />
           <motion.img variants={fadeIn("up", "tween", 0.2, 0.5)} src={img2} />
           <motion.img variants={fadeIn("up", "tween", 0.2, 0.5)} src={img3} />
-        </div>
+        </motion.div >
       </div>
     </motion.section>
   );
