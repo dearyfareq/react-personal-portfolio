@@ -29,10 +29,10 @@ export const Portfolio = () => {
         </div>
 
         {/* img sliders / gallary*/}
-        <motion.div variants={fadeIn("up", "tween", 0.2, 0.5)} className={css.gallary}>
-          <motion.img variants={fadeIn("up", "tween", 0.2, 0.5)} src={img1} />
-          <motion.img variants={fadeIn("up", "tween", 0.2, 0.5)} src={img2} />
-          <motion.img variants={fadeIn("up", "tween", 0.2, 0.5)} src={img3} />
+        <motion.div variants={fadeIn("up", "tween", 0.2, 1)} className={css.gallary}>
+          <img  src={img1} />
+          <img  src={img2} />
+          <img  src={img3} />
         </motion.div >
       </div>
     </motion.section>
